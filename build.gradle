@@ -1,0 +1,30 @@
+plugins {
+	id 'org.springframework.boot' version '2.4.1'
+	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+	id 'java'
+}
+
+group = 'com.in'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	compileOnly 'org.projectlombok:lombok'
+	compile group: 'commons-lang', name: 'commons-lang', version: '2.6'
+	compile group: 'com.ibm.icu', name: 'icu4j', version: '4.8'
+	// https://mvnrepository.com/artifact/com.google.zxing/core
+	compile group: 'com.google.zxing', name: 'core', version: '3.4.1'
+	// https://mvnrepository.com/artifact/com.google.zxing/javase
+	compile group: 'com.google.zxing', name: 'javase', version: '3.4.1'
+	implementation 'org.springframework.boot:spring-boot-starter-websocket'
+}
+
+test {
+	useJUnitPlatform()
+}
